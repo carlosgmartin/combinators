@@ -20,3 +20,5 @@ Tree * create_branch(Tree * left, Tree * right);
 void delete(Tree * tree);
 
 void print(Tree * tree);
+
+int equals(Tree * a, Tree * b);

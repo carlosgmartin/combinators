@@ -56,3 +56,18 @@ void print(Tree * tree)
 			break;
 	}
 }
+
+int equals(Tree * a, Tree * b) {
+	if (a->type == b->type == leaf)
+	{
+		return a->value == b->value;
+	}
+	else if (a->type == b->type == branch)
+	{
+		return equals(a->left, b->left) && equals(a->right, b->right);
+	}
+	else
+	{
+		return 0;
+	}
+}
