@@ -1,7 +1,10 @@
 all: main
 
-main: main.o tree.o list.o eval.o
-	gcc main.o tree.o list.o eval.o -o main
+main: main.o tree.o list.o eval.o enum.o
+	gcc main.o tree.o list.o eval.o enum.o -o main
+
+enum.o: enum.c
+	gcc -c enum.c
 
 main.o: main.c
 	gcc -c main.c

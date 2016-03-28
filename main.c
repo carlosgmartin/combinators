@@ -3,6 +3,7 @@
 #include "list.h"
 #include "eval.h"
 #include "combinators.h"
+#include "enum.h"
 
 int main() {
 	printf("Hello world!\n");
@@ -30,6 +31,14 @@ int main() {
 
 
 
+	List list = enumerate(2); // slow at 9
+	Node * node = list.head;
+	while (node != NULL) {
+		Tree * tree = node->tree;
+		print(tree); printf("\n");
+		// print(evaluate_once(tree)); printf("\n\n");
+		node = node->next;
+	}
 
 	
 	
