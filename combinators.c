@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef enum { leaf, branch } Type;
 typedef struct Tree {
@@ -11,6 +12,23 @@ typedef struct Tree {
 		};
 	};
 } Tree;
+
+Tree * create_leaf(int value)
+{
+	Tree * tree = malloc(sizeof(Tree));
+	tree->type = leaf;
+	tree->value = value;
+	return tree;
+}
+
+Tree * create_branch(Tree * left, Tree * right)
+{
+	Tree * tree = malloc(sizeof(Tree));
+	tree->type = branch;
+	tree->left = left;
+	tree->right = right;
+	return tree;
+}
 
 int main() {
 	printf("Hello world!\n");
