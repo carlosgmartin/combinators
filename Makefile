@@ -1,10 +1,10 @@
-all: combinators
+all: main
 
-combinators: combinators.o tree.o list.o eval.o
-	gcc combinators.o tree.o list.o eval.o -o combinators
+main: main.o tree.o list.o eval.o
+	gcc main.o tree.o list.o eval.o -o main
 
-combinators.o: combinators.c
-	gcc -c combinators.c
+main.o: main.c
+	gcc -c main.c
 
 tree.o: tree.c
 	gcc -c tree.c
@@ -17,5 +17,5 @@ eval.o: eval.c
 
 .PHONY: clean
 clean:
-	rm -f *.o combinators
-	find . -name "combinators *" -exec rm {} \;
+	rm -f *.o main
+	find . -name "main *" -exec rm {} \;
