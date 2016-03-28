@@ -1,4 +1,5 @@
-enum { K, S };
+#pragma once
+enum { K = -2, S };
 
 typedef enum { leaf, branch } Type;
 typedef struct Tree {
