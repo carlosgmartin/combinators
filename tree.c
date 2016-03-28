@@ -1,5 +1,6 @@
 #include "tree.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 Tree * create_leaf(int value)
 {
@@ -26,4 +27,32 @@ void delete(Tree * tree)
 		delete(tree->right);
 	}
 	free(tree);
+}
+
+void print(Tree * tree)
+{
+	switch (tree->type)
+	{
+		case leaf:
+			switch (tree->value)
+			{
+				case K:
+					printf("K");
+					break;
+				case S:
+					printf("S");
+					break;
+				default:
+					printf("%d", tree->value);
+					break;
+			}
+			break;
+		case branch:
+			printf("(");
+			print(tree->left);
+			printf(", ");
+			print(tree->right);
+			printf(")");
+			break;
+	}
 }
