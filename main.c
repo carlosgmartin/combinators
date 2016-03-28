@@ -23,12 +23,12 @@ int main() {
 	*/
 
 	Tree * tree = create_branch(create_branch(REVERSE, create_leaf(0)), create_leaf(1));
-	int i = 0;
-	for (i = 0; i < 10; ++i)
-	{
-		print(tree); printf("\n");
-		tree = evaluate_once(tree);
-	}
+	tree = evaluate_full(tree);
+	print(tree); printf("\n");
+	tree = evaluate_full(tree);
+	print(tree); printf("\n");
+
+
 
 
 	
