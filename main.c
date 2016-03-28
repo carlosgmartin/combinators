@@ -22,19 +22,16 @@ int main() {
 	}
 	*/
 
-	Tree * identity = IDENTITY;
-	Tree * tree = create_branch(identity, create_leaf(0));
-	print(tree); printf("\n");
-	tree = evaluate_once(tree);
-	print(tree); printf("\n");
-	tree = evaluate_once(tree);
-	print(tree); printf("\n");
-	tree = evaluate_once(tree);
-	print(tree); printf("\n");
-	tree = evaluate_once(tree);
-	print(tree); printf("\n");
+	Tree * tree = create_branch(create_branch(REVERSE, create_leaf(0)), create_leaf(1));
+	int i = 0;
+	for (i = 0; i < 10; ++i)
+	{
+		print(tree); printf("\n");
+		tree = evaluate_once(tree);
+	}
 
 
+	
 	
 
 	return 0;
