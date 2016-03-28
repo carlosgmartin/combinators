@@ -30,6 +30,16 @@ Tree * create_branch(Tree * left, Tree * right)
 	return tree;
 }
 
+Tree * delete(Tree * tree)
+{
+	if (tree->type == branch)
+	{
+		delete(tree->left);
+		delete(tree->right);
+	}
+	free(tree);
+}
+
 int main() {
 	printf("Hello world!\n");
 	return 0;
