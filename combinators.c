@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "tree.h"
 #include "list.h"
+#include "eval.h"
 
 int main() {
 	printf("Hello world!\n");
@@ -15,7 +16,7 @@ int main() {
 
 	Node * node = list.head;
 	while (node != NULL) {
-		print(node->tree);
+		print(evaluate_once(node->tree));
 		printf("\n");
 		node = node->next;
 	}
