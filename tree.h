@@ -22,3 +22,7 @@ void delete(Tree * tree);
 void print(Tree * tree);
 
 int equals(Tree * a, Tree * b);
+
+int get_size(Tree * tree);
+
+int get_depth(Tree * tree);

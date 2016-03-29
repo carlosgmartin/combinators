@@ -14,7 +14,8 @@ int main() {
 		Node * node = list.head;
 		while (node != NULL) {
 			Tree * tree = node->tree;
-			print(tree); printf("\n");
+			// print(tree); printf("\n");
+			printf("%d\n", get_depth(tree));
 			node->tree = evaluate_once(tree);
 			node = node->next;
 		}

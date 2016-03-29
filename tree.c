@@ -71,3 +71,29 @@ int equals(Tree * a, Tree * b) {
 		return 0;
 	}
 }
+
+int get_size(Tree * tree)
+{
+	if (tree->type == leaf)
+	{
+		return 1;
+	}
+	else
+	{
+		return get_size(tree->left) + get_size(tree->right);
+	}
+}
+
+int get_depth(Tree * tree)
+{
+	if (tree->type == leaf)
+	{
+		return 0;
+	}
+	else
+	{
+		int left = get_depth(tree->left);
+		int right = get_depth(tree->right);
+		return 1 + ((left > right) ? left : right);
+	}
+}
